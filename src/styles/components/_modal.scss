@@ -1,0 +1,91 @@
+.ant-modal {
+  width: 500px !important;
+}
+
+.ant-modal-content {
+  min-height: 500px;
+  margin: 0 auto;
+  background: #f4f5f7;
+}
+
+.ant-modal-footer {
+  border: none;
+  display: none;
+}
+
+.ant-modal-header {
+  border: none;
+}
+
+.modal-title-content {
+  font-weight: 700;
+}
+
+.modal-title {
+  font-size: 17px;
+  letter-spacing: -0.01rem;
+  font-weight: 600;
+
+  span {
+    font-weight: 300;
+    font-size: 11px;
+    color: rgb(163, 159, 159);
+    font-style: italic;
+    margin-left: 5px;
+  }
+}
+
+.desc-content {
+  //   letter-spacing: -0.05rem;
+}
+
+.activity-content {
+  position: relative;
+
+  button {
+    position: relative;
+    bottom: 0;
+    left: 45px;
+    border: none;
+    border-radius: 5px;
+    background: #40a9fe;
+    padding: 3px 10px;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.comment-input-holder {
+  display: flex;
+  align-items: baseline;
+  margin-top: 15px;
+
+  .user-tag {
+    padding: 10px;
+    background: #e0e1e6;
+    font-weight: 700;
+    border-radius: 50px;
+    font-size: 11px;
+    margin-right: 10px;
+  }
+
+  .comment-text {
+    font-size: 13px;
+
+    .comment-name {
+      font-weight: 700;
+
+      span {
+        font-weight: 300;
+        font-size: 11px;
+        color: rgb(163, 159, 159);
+        font-style: italic;
+      }
+    }
+  }
+}
