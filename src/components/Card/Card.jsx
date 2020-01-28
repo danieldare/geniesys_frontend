@@ -2,7 +2,7 @@ import React from 'react';
 
 function Card({ item, index, showModal }) {
   const tags = item.tags.join(', ');
-  console.log('====ytages', tags);
+
   return (
     <div className='card' onClick={() => showModal()}>
       <div className='card__content'>
@@ -11,11 +11,11 @@ function Card({ item, index, showModal }) {
           <h2 className='card-title'>{item.title}</h2>
         </div>
 
-        <div className='card-body'>{item.description}</div>
+        <div className='card-body'>{item.description || 'click to add a description'}</div>
         <hr />
         <div className='card-footer'>
           <div className='card-tags'>
-            <span className='tag'>{tags}</span>
+            <span className='tag'>{tags || 'no tags yet'}</span>
           </div>
           <p className='card-user-tag'>DO</p>
         </div>

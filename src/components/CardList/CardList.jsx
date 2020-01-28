@@ -1,13 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Card from '../Card/Card';
 import uuid from 'uuid';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext } from 'react-beautiful-dnd';
 import { useStateValue } from '../../store';
 
 function CardList({ type, data, showModal }) {
   const [state, setState] = useState({
     addCard: false,
-    text: '',
+    title: '',
+    description: '',
     onFocus: false,
   });
 
@@ -16,7 +17,7 @@ function CardList({ type, data, showModal }) {
   function handleChange(e) {
     setState({
       ...state,
-      text: e.target.value,
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -28,7 +29,7 @@ function CardList({ type, data, showModal }) {
   }
 
   function handleBlur() {
-    if (state.text === '' && state.onFocus) {
+    if (state.title === '' && state.description === '' && state.onFocus) {
       setState({
         ...state,
         onFocus: false,
@@ -45,11 +46,18 @@ function CardList({ type, data, showModal }) {
       cardSection: type,
       payload: {
         id: uuid(),
-        title: state.text,
-        description: '',
+        title: state.title,
+        description: state.description,
         tags: [],
         user_assigned: 'segun Oluwadare',
       },
+    });
+
+    setState({
+      ...state,
+      addCard: false,
+      title: '',
+      description: '',
     });
   }
 
@@ -68,10 +76,11 @@ function CardList({ type, data, showModal }) {
 
         {state.addCard ? (
           <>
-            <form onSubmit={handleSubmit}>
-              <textarea autoFocus onBlur={handleBlur} onFocus={handleFocus} onChange={handleChange} value={state.text} placeholder='add title' rows='2' draggable={false}></textarea>
+            <form onSubmit={handleSubmit} className='form-container'>
+              <input autoFocus type='text' name='title' onBlur={handleBlur} onFocus={handleFocus} onChange={handleChange} placeholder='add task section e.g ui/ux' value={state.title} />
+              <textarea onBlur={handleBlur} onFocus={handleFocus} name='description' onChange={handleChange} value={state.text} placeholder='add description' rows='2' draggable={false}></textarea>
               <button type='submit'>save</button>
-              <button className='btn-red' type='button' onClick={() => setState({ ...state, addCard: false, text: '' })}>
+              <button className='btn-red' type='button' onClick={() => setState({ ...state, addCard: false, title: '', description: '' })}>
                 close
               </button>
             </form>

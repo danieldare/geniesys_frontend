@@ -1,10 +1,13 @@
 .header {
-  height: 40px;
+  height: 60px;
   margin: 0 auto;
   text-align: center;
-  line-height: 40px;
+  line-height: 60px;
   background: rgba(19, 60, 152, 0.158);
+  color: #fff;
   margin-bottom: 50px;
-  font-weight: 300;
-  font-size: 17px;
+  font-weight: 500;
+  font-size: 20px;
+  box-shadow: 0 3px 15px rgba($color: #ffffff, $alpha: 0.1);
+  text-transform: uppercase;
 }

@@ -1,17 +1,22 @@
 .card-list {
   background-color: rgba(19, 60, 152, 0.158);
   padding: 5px 7px;
-  max-width: 280px;
   border-radius: 5px;
+  box-shadow: 0 3px 15px rgba($color: #ffffff, $alpha: 0.1);
+  margin: 0 5px;
+  max-width: 220px;
+  min-width: 220px;
 
   &__title {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
     padding: 5px 7px;
-    background: #25829836;
+    background: #c1e4ec36;
     border-radius: 5px;
+    color: #fff;
+
     span {
-      background: rgb(233, 233, 233);
+      background: #757575;
       margin-left: 5px;
       padding: 0px 5px;
       border-radius: 5px;
@@ -48,4 +53,8 @@
       }
     }
   }
+}
+
+.form-container {
+  margin: 10px 0;
 }

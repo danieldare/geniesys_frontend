@@ -4,9 +4,28 @@ textarea {
   border: 1px solid rgb(231, 231, 231);
   padding: 5px 10px 5px 10px;
   transition: all 1s ease-in;
+  margin-top: 6px;
+
+  &::placeholder {
+    color: rgb(192, 192, 192);
+    font-size: 12px;
+  }
 
   &:focus {
     height: 70px;
+  }
+}
+
+input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgb(231, 231, 231);
+  padding: 5px 10px 5px 10px;
+  transition: all 1s ease-in;
+
+  &::placeholder {
+    color: rgb(192, 192, 192);
+    font-size: 12px;
   }
 }
 
@@ -15,4 +34,27 @@ select:focus,
 textarea:focus,
 button:focus {
   outline: none;
+}
+
+.btn-holder {
+  max-width: 220px;
+  min-width: 220px;
+  margin-left: 7px;
+
+  .btn {
+    width: 100%;
+    border: none;
+    outline: 0;
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #96acd845;
+    color: #fff;
+    box-shadow: 0 3px 5px rgba($color: #000000, $alpha: 0.2);
+    font-size: 12px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
